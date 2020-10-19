@@ -1,0 +1,10 @@
+<template>
+    <template if:true={apps.data}>
+        <template for:each={apps.data} for:item="app">
+            <c-record-list key={app.Id} icon-name="custom:custom67" title={app.Name} details="Details" record={app} onrecordselect={handleAppSelect}>
+                <span slot="body">Slot Body</span>
+                <span slot="footer">Slot Footer</span>
+            </c-record-list>
+        </template>
+    </template>
+</template>
