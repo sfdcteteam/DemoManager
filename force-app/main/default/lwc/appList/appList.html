@@ -1,10 +1,12 @@
 <template>
     <template if:true={apps.data}>
         <template for:each={apps.data} for:item="app">
-            <c-record-list key={app.Id} icon-name="custom:custom67" title={app.Name} details="Details" record={app} onrecordselect={handleAppSelect}>
+            <c-record-list key={app.Id} icon-name="custom:custom67" title={app.Name} details={app.Details__c} record={app} onrecordselect={handleAppSelect}>
                 <span slot="body">Slot Body</span>
-                <span slot="footer">Slot Footer</span>
             </c-record-list>
         </template>
     </template>
+    <c-paginator page-size={pageSize} current-page={currentPage} total-pages={totalPages} total-records={totalRecords} onprevious={previousHandler} onnext={nextHandler} onpagesizechanged={changePageSizeHandler} onfirstpage={firstpagehandler} onlastpage={lastpagehandler}></c-paginator>
+
+    <!--<c-paginator class="slds-show slds-is-relative" onprevious={handlePrevious} onnext={handleNext}></c-paginator>-->
 </template>

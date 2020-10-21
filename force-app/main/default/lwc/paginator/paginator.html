@@ -1,0 +1,31 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item>
+            <lightning-button data-name="Previous" label="Previous" icon-name="utility:chevronleft" onclick={previousHandler}></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item>
+                <lightning-button data-name="First" label="First Page" icon-name="utility:chevronleft" onclick={FirstPageHandler}></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="grow"></lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-combobox
+            name="pagesize"
+            label="Status"
+            value={value}
+            variant="label-hidden"
+            placeholder="Page Size"
+            options={options}
+            onchange={changePageSizeHandler} ></lightning-combobox>
+        </lightning-layout-item>   
+        <lightning-layout-item>
+            <p  class="slds-p-horizontal_medium">Page {currentPage} of {totalPages} for {totalRecords} records</p>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="grow"></lightning-layout-item>
+        <lightning-layout-item>
+                <lightning-button data-name="Last" label="Last Page" icon-name="utility:chevronright" icon-position="right" onclick={LastPageHandler}></lightning-button>
+            </lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-button data-name="Next" label="Next" icon-name="utility:chevronright" icon-position="right" onclick={nextHandler}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>
